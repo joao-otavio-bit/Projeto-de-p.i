@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --accent: #0d6efd;
+    --accent-dark: #0a58ca;
+    --accent-glow: rgba(13, 110, 253, 0.25);
+    --silver-title: #1a252c;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(13, 110, 253, 0.2);
+    --text-main: #212529;
+    --text-muted: #6c757d;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(45deg, rgba(13, 110, 253, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at top right, #e3f2fd, transparent);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--silver-title);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h2 span, h1 span {
+    color: var(--accent);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-top: 3px solid var(--accent); /* Detalhe superior em azul */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+/* Formulários */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    background: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    color: var(--text-main);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    background: #ffffff;
+}
+
+button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+button:hover {
+    background: var(--accent-dark);
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+button.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-main);
+    box-shadow: none;
+}
+button.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: none;
+    background: rgba(13, 110, 253, 0.05);
+}
+
+/* Grid de Palestras */
+.palestras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.palestra-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 20px;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.palestra-card:hover {
+    background: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.15);
+}
+
+.palestra-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.palestra-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--silver-title);
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+.palestra-meta {
+    font-size: 0.85em;
+    color: var(--accent-dark);
+    display: flex;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.btn-inscrever { 
+    background: var(--accent); 
+}
+
+.btn-desistir { 
+    background: transparent; 
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    box-shadow: none;
+}
+.btn-desistir:hover {
+    background: #dc3545;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+.alert-error { 
+    background: #f8d7da; 
+    border: 1px solid #f5c2c7; 
+    color: #842029; 
+}
+.alert-success { 
+    background: #d1e7dd; 
+    border: 1px solid #badbcc; 
+    color: #0f5132; 
+}
+
+/* Grid para Login/Cadastro */
+.auth-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .auth-grid { grid-template-columns: 1fr; }
+}
